@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import MenuItem from './MenuItem';
 
-import { DISHES } from '../shared/dishes';
 
-const Menu = () => {
-  const [dishes, setDishes] = useState(DISHES);
+
+const Menu = (props) => {
+  const [dishes, setDishes] = useState(props.dishes);
   const [selectedDish, setSelectedDish] = useState(null);
 
   return (
