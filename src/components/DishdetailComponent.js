@@ -29,12 +29,12 @@ const DishComments = ({ comments = [] }) => {
     <CardBody>
       <CardTitle tag="h4">Comments</CardTitle>
       {comments.map((item) => (
-        <div key={item.id} className="mb-2">
+        <ul key={item.id} className="list-unstyled mb-2">
           <CardText>{item.comment}</CardText>
           <p className="blockquote-footer">
             {item.author}, {formatDate(item.date)}
           </p>
-        </div>
+        </ul>
       ))}
     </CardBody>
   );
