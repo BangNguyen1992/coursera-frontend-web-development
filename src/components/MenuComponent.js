@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import MenuItem from './MenuItem';
-
-
+import DishtailComponent from './DishdetailComponent';
 
 const Menu = (props) => {
   const [dishes, setDishes] = useState(props.dishes);
@@ -16,19 +14,11 @@ const Menu = (props) => {
         ))}
       </div>
       <div className="row">
-        <div className="col-12 col-md-5 m-1">
-          {!selectedDish ? (
-            <div></div>
-          ) : (
-            <Card>
-              <CardImg top src={selectedDish.image} alt={selectedDish.name} />
-              <CardBody>
-                <CardTitle>{selectedDish.name}</CardTitle>
-                <CardText>{selectedDish.description}</CardText>
-              </CardBody>
-            </Card>
-          )}
-        </div>
+        {!selectedDish ? (
+          <div></div>
+        ) : (
+          <DishtailComponent dish={selectedDish} />
+        )}
       </div>
     </div>
   );
