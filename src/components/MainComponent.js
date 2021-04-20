@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
 
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 import Menu from './MenuComponent';
 import DishDetail from './DishdetailComponent';
 
@@ -12,14 +13,12 @@ const Main = () => {
 
   return (
     <div>
-      <Navbar dark color="primary">
-        <div className="container">
-          <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-        </div>
-      </Navbar>
-      <Menu dishes={dishes} onDishSelect={setSelectedDish} />
+      <Header />
 
+      <Menu dishes={dishes} onDishSelect={setSelectedDish} />
       <DishDetail dish={selectedDish} />
+
+      <Footer />
     </div>
   );
 };
