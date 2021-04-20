@@ -13,6 +13,7 @@ function App() {
           <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
           <Menu />
         </div>
+        {/* test */}
       </Navbar>
     </div>
   );
