@@ -12,9 +12,9 @@ function App() {
       <Navbar dark color="primary">
         <div className="container">
           <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-          <Menu dishes={DISHES} />
         </div>
       </Navbar>
+      <Menu dishes={DISHES} />
     </div>
   );
 }
