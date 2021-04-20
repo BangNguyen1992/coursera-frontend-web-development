@@ -41,11 +41,16 @@ const DishComments = ({ comments = [] }) => {
 };
 
 export default ({ dish }) => {
+  if (!dish) {
+    return <div></div>;
+  }
   return (
-    <>
-      <DishDetail dish={dish} />
-      <DishComments comments={dish.comments} />
-    </>
+    <div className="container">
+      <div className="row">
+        <DishDetail dish={dish} />
+        <DishComments comments={dish.comments} />
+      </div>
+    </div>
   );
 };
 
