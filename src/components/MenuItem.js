@@ -1,20 +1,15 @@
 import React from 'react';
-import { Media } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 
-const MenuItem = ({ dish }) => {
+const MenuItem = ({ dish, onDishSelect }) => {
   return (
-    <div>
-      <div key={dish.id} className="col-12 mt-5">
-        <Media tag="li">
-          <Media left middle>
-            <Media object src={dish.image} alt={dish.name} />
-          </Media>
-          <Media body className="ml-5">
-            <Media heading>{dish.name}</Media>
-            <p>{dish.description}</p>
-          </Media>
-        </Media>
-      </div>
+    <div className="col-12 col-md-5 m-1">
+      <Card onClick={() => onDishSelect(dish)}>
+        <CardImg width="100%" src={dish.image} alt={dish.name} />
+        <CardImgOverlay>
+          <CardTitle>{dish.name}</CardTitle>
+        </CardImgOverlay>
+      </Card>
     </div>
   );
 };
