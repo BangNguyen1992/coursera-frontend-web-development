@@ -40,7 +40,7 @@ const DishComments = ({ comments = [] }) => {
   );
 };
 
-export default ({ dish }) => {
+const DishdetailComponent = ({ dish }) => {
   if (!dish) {
     return <div></div>;
   }
@@ -54,4 +54,5 @@ export default ({ dish }) => {
   );
 };
 
+export default DishdetailComponent;
 // rafce

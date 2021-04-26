@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Menu from './MenuComponent';
 import DishDetail from './DishdetailComponent';
+import Home from './HomeComponent';
 
 import { DISHES } from '../shared/dishes';
 
@@ -14,8 +16,18 @@ const Main = () => {
   return (
     <div>
       <Header />
+      <Switch>
+        <Route path="/home" component={Home} />
+        <Route
+          exact
+          path="/menu"
+          component={() => (
+            <Menu dishes={dishes} onDishSelect={setSelectedDish} />
+          )}
+        />
+        <Redirect to="/home" />
+      </Switch>
 
-      <Menu dishes={dishes} onDishSelect={setSelectedDish} />
       <DishDetail dish={selectedDish} />
 
       <Footer />
